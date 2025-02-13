@@ -137,7 +137,8 @@ Marvell>>
 
 
 Via USB (FAT32)
- 
+
+```
 Marvell>> usb start
 Marvell>> fatload usb 0:1 ${kernel_addr} uImage
 Marvell>> nand erase 0x500000 0x500000
@@ -146,6 +147,6 @@ Marvell>> fatload usb 0:1 ${ramdisk_addr} uInitrd
 Marvell>> nand erase 0xA00000 0x500000
 Marvell>> nand write ${ramdisk_addr} 0xA00000 0x500000
 Marvell>> reset
-
+```
 
 
