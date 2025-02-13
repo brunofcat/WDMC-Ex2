@@ -59,17 +59,16 @@ Marvell>> ext2ls ide 0:1
 <DIR>       1024 .
 <DIR>       1024 ..
 <DIR>      12288 lost+found
-         4062561 uImage-v5.10.109gs
+         4062561 uImage
          4830114 uinitrd
              169 readme.txt
-         4062565 uimage-5.10.109
 Marvell>>
 
 ```
 
 ### Load the kernel with the command `extload` or `fatload`:
 ```
-ext2load ide 0:1 0x500000 /uImage-v5.10.109gs 
+ext2load ide 0:1 0x500000 /uImage
 ```
 Here the `0x500000` is the memory address to which you want uBoot to load your kernel. You can use also `0x2000000`
 Be aware that this loading is not persisently wrote into the NAND.
@@ -123,9 +122,9 @@ Marvell>>
 ```
 For the kernel `uImage-v5.10.109gs` the `uinitrd` is not necessary (but you can still provide it to uboot) needed and you can tune as follow:
 ```
-Marvell>> setenv bootcmd ide reset \; ext2load ide 0:1 0x500000 /uImage-v5.10.109gs \; bootm 0x500000
+Marvell>> setenv bootcmd ide reset \; ext2load ide 0:1 0x500000 /uImage \; bootm 0x500000
 Marvell>> printenv bootcmd
-bootcmd=ide reset ; ext2load ide 0:1 0x500000 /uImage-v5.10.109gs ; bootm 0x500000
+bootcmd=ide reset ; ext2load ide 0:1 0x500000 /uImage ; bootm 0x500000
 Marvell>> setenv bootargs root=/dev/sda2 console=ttyS0,115200 max_loop=32 usbcore.autosuspend=-1
 Marvell>> printenv bootargs
 bootargs=root=/dev/sda2 console=ttyS0,115200 max_loop=32 usbcore.autosuspend=-1
@@ -135,3 +134,18 @@ Erasing Nand...
 Writing to Nand... done
 Marvell>>
 ```
+
+
+Via USB (FAT32)
+ 
+Marvell>> usb start
+Marvell>> fatload usb 0:1 ${kernel_addr} uImage
+Marvell>> nand erase 0x500000 0x500000
+Marvell>> nand write ${kernel_addr} 0x500000 0x500000
+Marvell>> fatload usb 0:1 ${ramdisk_addr} uInitrd
+Marvell>> nand erase 0xA00000 0x500000
+Marvell>> nand write ${ramdisk_addr} 0xA00000 0x500000
+Marvell>> reset
+
+
+
