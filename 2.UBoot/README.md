@@ -120,7 +120,7 @@ Erasing Nand...
 Writing to Nand... done
 Marvell>>
 ```
-For the kernel `uImage-v5.10.109gs` the `uinitrd` is not necessary (but you can still provide it to uboot) needed and you can tune as follow:
+For the kernel `uImage-v5.10.234` the `uinitrd` is not necessary (but you can still provide it to uboot) needed and you can tune as follow:
 ```
 Marvell>> setenv bootcmd ide reset \; ext2load ide 0:1 0x500000 /uImage \; bootm 0x500000
 Marvell>> printenv bootcmd
