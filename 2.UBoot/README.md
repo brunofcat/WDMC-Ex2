@@ -37,7 +37,7 @@ All changes you do on enviroment variable and loading new kernel here are not pe
 This is the siplest solution I found.
 
 Plug your HD and create a small partition to store the uimage files; format it as FAT32 or Ext2.
-Copy on this partition the uimage file [uImage-v5.10.109gs](uImage-v5.10.109gs) 
+Copy on this partition the uimage file [uImage](uImage) 
 To enable the SATA connection issue the command:
 ```
 Marvell>> ide reset
