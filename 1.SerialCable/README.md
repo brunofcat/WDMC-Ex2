@@ -23,6 +23,8 @@ Then you need to unscrew the metal chassis and to get access to the board.
 
 The board has a space dedicated to the serial connection. See this picture:
 ![Bottom side of the board](Bottom.jpg)
+![image](https://github.com/user-attachments/assets/aeb11619-9aa2-49b7-8291-fa4a9be977d3)
+
 
 Should your board be different, WD adopt the convention of keeping the same drawing for the serial connection.
 
