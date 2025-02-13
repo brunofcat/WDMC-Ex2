@@ -87,6 +87,10 @@ For example with `minicom -s`:
 ```
 Start `minicom` and wait the first signal is received
 
+Putty Example:
+![image](https://github.com/user-attachments/assets/de8a1f95-315a-498f-9658-525dd0613bc3)
+
+
 ### 2. Connect the "USB to UART" to dupont cables
 
 The connection is quite simple:
