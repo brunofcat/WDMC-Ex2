@@ -29,7 +29,7 @@ Should your board be different, WD adopt the convention of keeping the same draw
 If you are unsecure about which is the right pint, continue to the next step with the soldering and then you can try to connect to the _USB to UART_ device.
 If you used a powered _USB to UART_ you can avoid to solder and connect the +3.3V; as these are TTL signals there is no risk you can burn the serial circuits in case of wrong connection of the other 3 pins (GND, Tx and Rx).
 
-## Solder 3 dupont cables
+## Solder 3 dupont cables or insert a cable in the holes and put something to hold it, hot glue for example.
 
 Yes, you need it :roll_eyes:
 
